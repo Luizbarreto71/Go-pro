@@ -1,0 +1,113 @@
+/* Base Card Styles */
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+/* Variants */
+.default {
+  background-color: var(--surface);
+  border-color: var(--border);
+}
+
+.elevated {
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.outline {
+  background-color: transparent;
+  border: 2px solid var(--border);
+  box-shadow: none;
+}
+
+.filled {
+  background-color: var(--surface-hover);
+  border-color: transparent;
+}
+
+/* Padding Sizes */
+.padding-none {
+  padding: 0;
+}
+
+.padding-small {
+  padding: var(--spacing-sm);
+}
+
+.padding-medium {
+  padding: var(--spacing-md);
+}
+
+.padding-large {
+  padding: var(--spacing-lg);
+}
+
+/* Hover Effect */
+.hover:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Clickable */
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.clickable:active {
+  transform: scale(0.99);
+}
+
+/* Card Header */
+.cardHeader {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Card Title */
+.cardTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Card Content */
+.cardContent {
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--text-secondary);
+}
+
+/* Card Footer */
+.cardFooter {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--border);
+  background-color: var(--surface-hover);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .padding-large {
+    padding: var(--spacing-md);
+  }
+  
+  .cardHeader,
+  .cardContent,
+  .cardFooter {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+}

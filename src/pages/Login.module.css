@@ -1,0 +1,151 @@
+/* Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  background-color: var(--background);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Logo */
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+  color: white;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+.logo.dark {
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+}
+
+/* Title */
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xs);
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Password Field */
+.passwordField {
+  position: relative;
+}
+
+/* Toggle Password */
+.togglePassword {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.togglePassword:hover {
+  color: var(--text-primary);
+}
+
+/* Forgot Password */
+.forgotPassword {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.forgotLink {
+  font-size: var(--font-size-sm);
+  color: var(--primary-color);
+  transition: color var(--transition-fast);
+}
+
+.forgotLink:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Switch Text */
+.switchText {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Switch Button */
+.switchButton {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: color var(--transition-fast);
+}
+
+.switchButton:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  .logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .logo svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .card {
+    padding: var(--spacing-md) !important;
+  }
+}

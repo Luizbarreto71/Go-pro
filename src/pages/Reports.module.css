@@ -1,0 +1,223 @@
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding-bottom: 100px;
+  position: relative;
+}
+
+/* Loading Container */
+.loadingContainer {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xs);
+  gap: var(--spacing-xs);
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  background-color: var(--surface-hover);
+}
+
+.tab.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Report Content */
+.reportContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+/* Chart Container */
+.chartContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md);
+}
+
+/* Monthly Summary */
+.monthlySummary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md);
+  background-color: var(--surface-hover);
+  border-radius: var(--radius-md);
+}
+
+.summaryLabel {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summaryValue {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.profitMargin {
+  color: var(--success-color);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-2xl);
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* Top Products List */
+.topProductsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  border-top: 1px solid var(--border);
+  padding-top: var(--spacing-md);
+}
+
+.topProductItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-hover);
+}
+
+.productRank {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--primary-color);
+  min-width: 32px;
+  text-align: center;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productName {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.productDetails {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+.productRevenue {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--success-color);
+  white-space: nowrap;
+}
+
+/* Refresh Button */
+.refreshButton {
+  position: fixed;
+  bottom: 80px;
+  right: var(--spacing-md);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--surface);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  font-size: 20px;
+  z-index: var(--z-fixed);
+}
+
+.refreshButton:hover {
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabs {
+    flex-direction: column;
+  }
+  
+  .tab {
+    justify-content: flex-start;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .monthlySummary {
+    grid-template-columns: 1fr;
+  }
+}

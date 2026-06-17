@@ -1,0 +1,158 @@
+/* Content */
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+/* Icon Wrapper */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+/* Icon Colors */
+.primary {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: var(--primary-color);
+}
+
+.secondary {
+  background-color: rgba(6, 182, 212, 0.1);
+  color: var(--secondary-color);
+}
+
+.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning-color);
+}
+
+.danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger-color);
+}
+
+.info {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--info-color);
+}
+
+/* Info Section */
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Label */
+.label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Value */
+.value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-top: 2px;
+  word-break: break-word;
+}
+
+/* Unit */
+.unit {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-left: 2px;
+}
+
+/* Trend */
+.trend {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.trend.up {
+  color: var(--success-color);
+}
+
+.trend.down {
+  color: var(--danger-color);
+}
+
+/* Clickable */
+.clickable {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.clickable:active {
+  transform: scale(0.98);
+}
+
+/* Responsive - Mobile optimizations */
+@media (max-width: 480px) {
+  .content {
+    gap: var(--spacing-xs);
+  }
+  
+  .iconWrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+  }
+  
+  .iconWrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .label {
+    font-size: var(--font-size-xs);
+    line-height: 1.2;
+  }
+
+  .value {
+    font-size: var(--font-size-lg);
+  }
+  
+  .unit {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .iconWrapper {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .iconWrapper svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .value {
+    font-size: var(--font-size-base);
+  }
+}

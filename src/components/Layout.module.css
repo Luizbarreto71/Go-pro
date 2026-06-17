@@ -1,0 +1,35 @@
+/* Layout */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: var(--spacing-md);
+  padding-bottom: calc(var(--spacing-md) + 60px);
+  overflow-y: auto;
+}
+
+/* Spacer for fixed navigation */
+.spacer {
+  height: 0;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .main {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    max-width: 800px;
+  }
+}

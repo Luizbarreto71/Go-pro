@@ -1,0 +1,84 @@
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: var(--spacing-xs) 0;
+  padding-bottom: max(var(--spacing-xs), env(safe-area-inset-bottom));
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  min-height: 60px;
+}
+
+/* Nav Item */
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--text-tertiary);
+  transition: all var(--transition-fast);
+  position: relative;
+  flex: 1;
+  min-height: 52px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navItem:hover {
+  color: var(--text-secondary);
+}
+
+.navItem:active {
+  transform: scale(0.95);
+}
+
+/* Active State */
+.navItem.active {
+  color: var(--primary-color);
+}
+
+.navItem.active .navIcon {
+  transform: scale(1.1);
+}
+
+/* Nav Icon */
+.navIcon {
+  transition: transform var(--transition-fast);
+}
+
+/* Nav Label */
+.navLabel {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Active Indicator */
+.activeIndicator {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-color);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .nav {
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+}
