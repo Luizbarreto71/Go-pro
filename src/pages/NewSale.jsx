@@ -25,12 +25,16 @@ const NewSale = () => {
   const [productModalOpen, setProductModalOpen] = useState(false)
   const [confirmModalOpen, setConfirmModalOpen] = useState(false)
 
+  // Produtos disponíveis (com estoque > 0)
   const availableProducts = products.filter(p => p.quantity > 0)
 
-  const filteredProducts = availableProducts.filter(product =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.batch?.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  // Filtrar produtos pela busca (se houver termo de busca)
+  const filteredProducts = searchTerm
+    ? availableProducts.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.batch?.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : availableProducts // Se não houver busca, mostra todos os produtos
 
   const handleProductSelect = (product) => {
     setSelectedProduct(product)

@@ -16,10 +16,12 @@ const Dashboard = () => {
   const { user } = useAuth()
   const { 
     products, 
+    sales,
     dashboardData, 
     loadingDashboard, 
     loadDashboardData,
-    loadProducts 
+    loadProducts,
+    loadSales
   } = useData()
   const { error } = useToast()
   const navigate = useNavigate()
@@ -32,7 +34,7 @@ const Dashboard = () => {
   const loadData = async () => {
     setRefreshing(true)
     try {
-      await Promise.all([loadProducts(), loadDashboardData()])
+      await Promise.all([loadProducts(), loadDashboardData(), loadSales()])
     } catch (err) {
       error('Erro', 'Falha ao carregar dados do dashboard')
     } finally {
@@ -46,6 +48,15 @@ const Dashboard = () => {
       currency: 'BRL'
     }).format(value)
   }
+
+  const formatDateTime = (dateString) => {
+    return format(new Date(dateString), 'dd/MM HH:mm')
+  }
+
+  // Ordenar vendas por data (mais recentes primeiro)
+  const recentSales = [...sales]
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 5) // Mostrar apenas as 5 mais recentes
 
   if (loadingDashboard && products.length === 0) {
     return (
@@ -215,7 +226,24 @@ const Dashboard = () => {
               </div>
             ) : (
               <div className={styles.salesList}>
-                {/* Lista de vendas seria implementada aqui */}
+                {recentSales.map(sale => {
+                  const product = products.find(p => p.id === sale.product_id)
+                  return (
+                    <div key={sale.id} className={styles.saleItem}>
+                      <div className={styles.saleInfo}>
+                        <span className={styles.saleProduct}>
+                          {product?.name || 'Produto'}
+                        </span>
+                        <span className={styles.saleDetails}>
+                          {sale.quantity} unid. • {formatDateTime(sale.created_at)}
+                        </span>
+                      </div>
+                      <span className={styles.saleAmount}>
+                        {formatCurrency(sale.total_amount)}
+                      </span>
+                    </div>
+                  )
+                })}
                 <p className={styles.salesSummary}>
                   {dashboardData.todaySales} venda(s) realizada(s) hoje
                 </p>

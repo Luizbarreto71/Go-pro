@@ -150,6 +150,47 @@
   flex-direction: column;
 }
 
+.salesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.saleItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.saleItem:last-of-type {
+  border-bottom: none;
+}
+
+.saleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.saleProduct {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.saleDetails {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+
+.saleAmount {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--success-color);
+}
+
 .emptyState {
   display: flex;
   flex-direction: column;
