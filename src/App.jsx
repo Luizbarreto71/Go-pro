@@ -9,6 +9,7 @@ import { useTheme } from './hooks/useTheme'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Products from './pages/Products'
+import ProductForm from './pages/ProductForm'
 import NewSale from './pages/NewSale'
 import Reports from './pages/Reports'
 
@@ -88,8 +89,8 @@ const AppRouter = () => {
         }
       >
         <Route index element={<Products />} />
-        <Route path="novo" element={<Products />} />
-        <Route path=":id" element={<Products />} />
+        <Route path="novo" element={<ProductForm />} />
+        <Route path=":id" element={<ProductForm />} />
       </Route>
 
       <Route 

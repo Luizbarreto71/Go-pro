@@ -310,7 +310,18 @@ export const DataProvider = ({ children }) => {
     }
   }, [user, products])
 
-  // Carregar produto por ID
+  // Obter produto por ID (da API)
+  const getProduct = useCallback(async (productId) => {
+    try {
+      const { data, error } = await productsAPI.getProduct(productId)
+      if (error) throw error
+      return { success: true, data }
+    } catch (err) {
+      return { success: false, error: err.message }
+    }
+  }, [])
+
+  // Obter produto por ID (local)
   const getProductById = useCallback((productId) => {
     return products.find(p => p.id === productId)
   }, [products])
@@ -341,6 +352,7 @@ export const DataProvider = ({ children }) => {
     createProduct,
     updateProduct,
     deleteProduct,
+    getProduct,
     getProductById,
     
     // Vendas

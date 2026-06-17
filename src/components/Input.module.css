@@ -137,6 +137,19 @@
   background-color: var(--surface-hover);
 }
 
+/* Textarea */
+.textarea {
+  min-height: 80px;
+  resize: vertical;
+  line-height: 1.5;
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+}
+
+.textareaWrapper {
+  align-items: flex-start;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   .large {
